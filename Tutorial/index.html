@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramientas de Contabilidad y Finanzas</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css"> 
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #a0e1ff, #e3f8ff);
+            color: #0a0a0a;
+        }
+
+        nav {
+            background-color: #001f3f;
+            display: flex;
+            justify-content: center;
+            padding: 1em;
+            box-shadow: 0 4px 6px rgba(0, 26, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+            font-weight: bold;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background: #00ccff;
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #00ccff;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                margin: 10px 0;
+            }
+        }
+
+        /* Reloj */
+        .clock {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px auto;
+            text-align: center;
+            background-color: rgba(0,0,0,0.1);
+            padding: 10px 20px;
+            border-radius: 12px;
+        }
+
+        /* Tarjetas */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .container-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            width: 100%;
+            max-width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .card__img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #ccefff;
+            display: block;
+        }
+
+        .cards__text {
+            padding: 20px;
+            color: #111;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 0 0 12px 12px;
+        }
+
+        .card__list {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #002b80;
+            margin-top: 0;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
+        }
+
+        .card__copy {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #111;
+            min-height: 120px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.6);
+        }
+
+        .card__button {
+            display: block;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .card__button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Títulos */
+        .section-title {
+            text-align:center; 
+            color:#001f3f; 
+            font-family:Arial, sans-serif; 
+            font-size:2em; 
+            text-shadow: 2px 2px 5px rgba(255,255,255,0.5);
+            margin-top: 40px;
+            margin-bottom: 25px; 
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #00416a, #001f3f);
+            color: #fff;
+            padding: 60px 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        footer a {
+            color: #00ccff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #00ffd9;
+        }
+    </style>
+</head>
+<body>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
+
+    <div class="clock" style="width: 280px;"></div>
+
+    <script>
+      $(document).ready(function() {
+        $('.clock').FlipClock({
+          clockFace: 'TwentyFourHourClock',
+          showSeconds: true
+        });
+      });
+    </script>
+
+    <nav>
+    <a href="../index.html">Inicio</a>
+    <a href="../Info/index.html">Temas</a>
+    <a href="../Tutorial/index.html">Heramientas</a>
+    <a href="../Contactanos/Untitled-1.html">Contactos</a>
+</nav>
+
+
+    <main>
+        <section class="services">
+            <div class="container">
+                <h2 class="section-title">Análisis de Flujo de Efectivo</h2>
+
+                <article class="container-cards">
+                    <div class="card">
+                        <img src="img/1.jpg" class="card__img" alt="Flujo Operativo">
+                        <div class="cards__text">
+                            <p class="card__list">Flujo de Efectivo Operativo</p>
+                            <p class="card__copy">Dinero generado o gastado por las actividades principales del negocio (ventas, pagos a proveedores, sueldos). Es la fuente más importante de liquidez para la gestión diaria de la empresa.</p>
+                            <a href="https://youtu.be/C22wffyVOqA?si=Y_sZ8TUC_GbpaWjo" class="card__button">MÁS INFO</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="img/2.jpg" class="card__img" alt="Flujo de Inversión">
+                        <div class="cards__text">
+                            <p class="card__list">Flujo de Efectivo de Inversión</p>
+                            <p class="card__copy">Dinero utilizado para comprar o vender activos a largo plazo (maquinaria, terrenos, equipos). Refleja las decisiones de crecimiento y renovación de la capacidad productiva de la organización.</p>
+                            <a href="https://youtu.be/F7C-LOqwqoE?si=KlN61OrCJvvt0E0O" class="card__button">MÁS INFO</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="img/3.jpg" class="card__img" alt="Flujo de Financiamiento">
+                        <div class="cards__text">
+                            <p class="card__list">Flujo de Efectivo de Financiamiento</p>
+                            <p class="card__copy">Dinero que entra o sale por préstamos, pagos de deuda (principal) o aportes de capital de los dueños. Muestra cómo se financia la empresa a través de fuentes externas e internas.</p>
+                            <a href="https://youtu.be/st6rgO2aDr0?si=zsvxEIr7IZFFeUap" class="card__button">MÁS INFO</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="img/4.jpg" class="card__img" alt="Propósito del Cash Flow">
+                        <div class="cards__text">
+                            <p class="card__list">Propósito del Análisis (Liquidez)</p>
+                            <p class="card__copy">Asegurar que la empresa tiene suficiente liquidez para cubrir sus obligaciones a corto plazo y planificar futuras inversiones. Es vital para la supervivencia financiera, evitando el riesgo de insolvencia.</p>
+                            <a href="https://youtu.be/q5RYND6cwVk?si=jqwu7Wgz2U-BW02H" class="card__button">MÁS INFO</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="img/20.jpg" class="card__img" alt="Cálculo del VAN">
+                        <div class="cards__text">
+                            <p class="card__list">Valor Actual Neto (VAN)</p>
+                            <p class="card__copy">
+                                Mide la ganancia o pérdida total que generaría un proyecto a valor presente, una vez descontada la inversión inicial. 
+                                Si el VAN es positivo (> 0), el proyecto es rentable y debe aceptarse. 
+                                Si es negativo (< 0), debe rechazarse.
+                            </p>
+                            <a href="https://youtube.com/shorts/sDCh7RMtOUk?si=c2cKJcvmmwffXzSR" class="card__button">CALCULAR VAN</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="img/21" class="card__img" alt="Cálculo de la TIR">
+                        <div class="cards__text">
+                            <p class="card__list">Tasa Interna de Retorno (TIR)</p>
+                            <p class="card__copy">
+                                Es la tasa de descuento que hace que el Valor Actual Neto (VAN) de una inversión sea exactamente igual a cero. 
+                                Representa la rentabilidad anual que el proyecto generará. Se acepta el proyecto si la TIR es mayor que el costo de capital de la empresa.
+                            </p>
+                            <a href="https://youtu.be/C5SUOxpqHgM?si=ecdNdxvPYoYItQFQ" class="card__button">CALCULAR TIR</a>
+                        </div>
+                    </div>
+                    </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="text-align: center;">
+            <h4 style="color: #ffdd59;">Contacto</h4>
+            <p><a href="https://wa.me/50251848844" target="_blank">WhatsApp</a> | 
+                <a href="mailto:hcoronadof@miumg.edu.gt">Correo</a> | 
+                <a href="https://www.google.com/maps?q=San+Pedro+Sac,+San+Marcos,+Guatemala" target="_blank">Ubicación</a></p>
+            <p style="font-size: 14px;">© 2025 Hugo Guillermo Coronado Fuentes</p>
+        </div>
+    </footer>
+
+</body>
+</html>

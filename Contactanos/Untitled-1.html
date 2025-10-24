@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Redes Sociales</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Variables y Reset Básico */
+        :root {
+            --color-principal: #6c5ce7; /* Morado/Púrpura */
+            --color-secundario: #a29bfe;
+            --color-fondo: #cfe2f3; /* Celeste claro */
+            --color-texto: #2d3436; /* Gris oscuro */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Contenedor Principal */
+        .card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Título */
+        h1 {
+            color: var(--color-principal);
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        /* Enlace de Redes Sociales (Botón Principal) */
+        .enlace-redes {
+            display: block;
+            background-color: var(--color-principal);
+            color: white;
+            padding: 15px 25px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(108, 92, 231, 0.4);
+        }
+
+        .enlace-redes:hover {
+            background-color: #5c4cd9; /* Un poco más oscuro al pasar el ratón */
+            transform: translateY(-2px); /* Pequeño efecto de elevación */
+        }
+        
+        /* Botón de Inicio */
+        .boton-inicio {
+            display: inline-block;
+            background: none;
+            color: var(--color-principal);
+            padding: 10px 20px;
+            margin-top: 30px;
+            border: 2px solid var(--color-principal);
+            border-radius: 8px;
+            font-size: 1em;
+            text-decoration: none;
+            font-weight: 400;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .boton-inicio:hover {
+            background-color: var(--color-secundario);
+            color: white;
+            border-color: var(--color-secundario);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Visita mis redes sociales</h1>
+
+        <a class="enlace-redes" href="https://atom.bio/hcoronadof" target="_blank">
+            ¡Haz clic para ver todos mis enlaces!
+        </a>
+        
+        <a class="boton-inicio" href="../index.html">
+            Ir a inicio
+        </a>
+    </div>
+</body>

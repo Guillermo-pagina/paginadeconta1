@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTABILIDAD ADMINISTRATIVA UMG</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <style>
+        /* ========================================================= */
+        /* CSS GENERAL Y NAVEGACIÓN */
+        /* ========================================================= */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0db2ff1c; 
+        }
+
+        nav {
+            background-color: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            padding: 1em;
+            box-shadow: 0 4px 6px rgba(0, 26, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: rgb(0, 255, 179);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background: #00aaff;
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #00aaff;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Contenedor principal de secciones */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .container-cards {
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 25px; 
+            justify-content: center; 
+            padding-bottom: 50px;
+        }
+
+        /* 2. Tarjeta Individual */
+        .card {
+            flex: 1 1 calc(33.333% - 25px); 
+            min-width: 280px; 
+            
+            /* CLAVE: Convertir la tarjeta en un contenedor Flex vertical */
+            display: flex;
+            flex-direction: column;
+            
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px); 
+        }
+
+        .card__img {
+            width: 100%;
+            height: 200px; 
+            object-fit: cover;
+        }
+
+        /* 3. Contenedor del Texto: Ocupa el espacio restante */
+        .cards__text {
+            padding: 20px;
+            display: flex; 
+            flex-direction: column;
+            flex-grow: 1; /* Permite que este contenedor se estire */
+        }
+
+        .card__list {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #1E90FF;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        /* 4. Párrafo de Descripción: ALINEACIÓN Y JUSTIFICACIÓN */
+        .card__copy {
+            /* ❗ CORRECCIÓN: Se eliminó el 'min-height: 180px;' para que Flexbox gestione la altura. */
+            line-height: 1.6;
+            color: #555;
+            
+            /* Justificación para que el texto se vea alineado a ambos lados */
+            text-align: justify; 
+            
+            flex-grow: 1; /* CLAVE: Permite que el párrafo ocupe el espacio */
+            margin-bottom: 15px;
+            
+            /* Mantiene los saltos de línea (<br>) */
+            white-space: pre-wrap; 
+        }
+        
+        /* 5. Botón: CLAVE para forzarlo al final */
+        .card__button {
+            /* CLAVE: Empuja el botón hacia el borde inferior, alineándolo. */
+            margin-top: auto; 
+            
+            display: block;
+            text-align: center;
+            padding: 10px 15px;
+            background-color: #00aaff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .card__button:hover {
+            background-color: #0088cc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .card {
+                flex: 1 1 calc(50% - 25px); /* 2 tarjetas por fila en tabletas */
+            }
+        }
+        
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                flex: 1 1 100%; /* 1 tarjeta por fila en móviles */
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
+
+    <div class="clock"></div>
+
+    <script>
+        $(document).ready(function() {
+            var clock = $('.clock').FlipClock({
+                clockFace: 'TwentyFourHourClock',
+                showSeconds: true
+            });
+        });
+    </script>
+    
+<nav>
+    <a href="../index.html">Inicio</a>
+    <a href="../Info/index.html">Temas</a>
+    <a href="../Tutorial/index.html">Heramientas</a>
+    <a href="../Contactanos/Untitled-1.html">Contactos</a>
+</nav>
+
+    <main>
+        
+        <section class="services">
+            <div class="container">
+                
+                  <h2 style="
+    text-align:center; 
+    color:#1E90FF; /* CAMBIO DE COLOR: Antes rojo (#ff1e1e), ahora azul brillante (DodgerBlue) */
+    font-family:Arial, sans-serif; 
+    font-size:2em; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Cambié la sombra para que combine con el nuevo color */
+    margin-top: 40px;">
+    Temas, definción y ejempleficación
+    </h2>
+                </h2>
+
+                <article class="container-cards">
+                    
+                    <div class="card">
+                        <img src="img/img1" class="card__img">
+                        <div class="cards__text">
+                            <p class="card__list">¿Qué es la contabilidad administrativa?</p>
+                            <p class="card__copy">La contabilidad administrativa es una rama de la contabilidad que se enfoca en proporcionar información útil a los directivos para la toma de decisiones dentro de la empresa. Su objetivo principal es ayudar en la planificación, control y evaluación del desempeño de las operaciones. A diferencia de la contabilidad financiera, no está sujeta a normas externas, sino que se adapta a las necesidades internas. Permite analizar costos, presupuestos y estrategias para mejorar la eficiencia. En resumen, es una herramienta clave para la gestión y el crecimiento organizacional.</p>
+                            <a href="https://youtu.be/XrWANp4lkF4?si=GpqItljZlhh-KxTl" class="card__button">VIDEO DE AYUDA</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="img/img2" class="card__img">
+                        <div class="cards__text">
+                            <p class="card__list">¿Qué es la contabilidada financiera?</p>
+                            <p class="card__copy">La contabilidad financiera es la rama que se encarga de registrar, clasificar y resumir las operaciones económicas de una empresa. Su finalidad es presentar información veraz y útil a terceros, como inversionistas, bancos o autoridades fiscales. Esta contabilidad se rige por normas y principios contables establecidos. Los resultados se reflejan en los estados financieros, como el balance general y el estado de resultados. En conjunto, permite evaluar la situación económica y el rendimiento de la organización.</p>
+                            <a href="https://youtu.be/RnPgycICv68?si=0nUY9MW3O8zTUNDi" class="card__button">VIDEO DE AYUDA</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="img/img3.jpg" class="card__img">
+                        <div class="cards__text">
+                            <p class="card__list">¿Qué es la contabilidad de costos?</p>
+                            <p class="card__copy">La contabilidad de costos se encarga de identificar, registrar y analizar los costos de producción o prestación de servicios dentro de una empresa. Su objetivo es determinar el costo real de los productos para apoyar la toma de decisiones. Permite controlar gastos, optimizar recursos y mejorar la eficiencia operativa. Se utiliza principalmente en áreas de manufactura o producción. En resumen, ayuda a establecer precios adecuados y aumentar la rentabilidad del negocio.</p>
+                            <a href="https://youtu.be/wvYaLx3-u_k?si=t8OcDbgZD9RIitTD" class="card__button">VIDEO DE AYUDA</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="img/img4.png" class="card__img">
+                        <div class="cards__text">
+                            <p class="card__list">Diferencias:</p>
+                            <p class="card__copy">La contabilidad administrativa: Se centra en generar información interna para la planeación, control y toma de decisiones dentro de la empresa.
+
+
+La contabilidad financiera: Elabora informes dirigidos a usuarios externos, como inversionistas o autoridades, siguiendo normas contables establecidas.
+        
+
+La contabilidad de costos: Analiza y controla los costos de producción para conocer el valor real de los productos y mejorar la eficiencia operativa.
+                            </p>
+                            <a href="https://youtu.be/a51mQdPEqK8?si=785_7DaHEV0mBoPg" class="card__button">VIDEO DE AYUDA</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="img/img5.png" class="card__img">
+                        <div class="cards__text">
+                            <p class="card__list">Información contable</p>
+                            <p class="card__copy">La información contable es el conjunto de datos financieros que reflejan las operaciones económicas de una empresa. A través de registros y reportes, muestra cómo se utilizan los recursos, cuáles son los ingresos, gastos, activos y pasivos, y cuál es el resultado final del negocio.
+                                
+                                <br>Objetivos:
+                                
+Su principal objetivo es brindar información útil, confiable y oportuna a los gerentes para planificar, controlar y evaluar el desempeño de la organización. También busca facilitar la comparación de resultados, apoyar la elaboración de presupuestos y contribuir al cumplimiento de las obligaciones legales y fiscales.
+                            </p>
+                            <a href="https://youtu.be/vGS2Vx3-NgU?si=b-IzAyfupvfzsZ1s" class="card__button">VIDEO DE AYUDA</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="img/img6.png" class="card__img">
+                        <div class="cards__text">
+                            <p class="card__list">Importancia de la información contable</p>
+                            <p class="card__copy">Importancia para la toma de decisiones gerenciales.
+                                 <br>La información contable permite a los directivos conocer la situación real de la empresa, identificar áreas de mejora y tomar decisiones basadas en datos concretos. Gracias a ella, se pueden definir estrategias, optimizar costos, evaluar inversiones y asegurar la estabilidad financiera. En resumen, es una herramienta esencial para una gestión eficiente y responsable.
+                                
+                                <br><br>
+                                
+En definitiva, una contabilidad bien manejada brinda una base sólida para la planeación, control y toma de decisiones estratégicas, ayudando a la organización a crecer de forma ordenada, rentable y sostenible.
+                            </p>
+                            <a href="https://youtu.be/6TW1bQV0XM4?si=P3a29Hjp3DcHG03q" class="card__button">VIDEO DE AYUDA</a>
+                        </div>
+                    </div>
+                    
+                </article>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container">
+                <h2 style="
+                    text-align:center; 
+                    color:#1E90FF; 
+                    font-family:Arial, sans-serif; 
+                    font-size:2em; 
+                    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                    margin-top: 40px;">
+                    METODOS DE VALUACION CONTABLE
+                    <span style="
+                        display:inline-block; 
+                        width:12px; 
+                        height:12px; 
+                        background:#FF4500; 
+                        border-radius:50%; 
+                        margin-left:10px; 
+                        box-shadow: 1px 1px 5px rgba(0,0,0,0.4); 
+                        vertical-align:middle;">
+                    </span>
+                </h2>
+
+                <article class="container-cards">
+                    
+                    <div class="card">
+                        <img src="img/img7" class="card__img">
+                        <div class="cards__text">
+                            <p class="card__list">METODO PEPS:</p>
+                            <p class="card__copy">PEPS, que se traduce como “Primero en Entrar, Primero en Salir”, es un método contable para la administración de inventarios. Con este sistema, los productos que llegan primero al almacén son los primeros en venderse o utilizarse, evitando que los artículos más antiguos se queden sin rotación. Este enfoque permite representar de manera más precisa el costo de los productos vendidos y el valor del inventario, apoyando decisiones financieras más acertadas en la empresa.</p>
+                            <a href="https://youtu.be/ORyYVSVO_rk?si=nF5LO9TU0aiJKF1Y" class="card__button">VIDEO DE AYUDA</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="img/img8.jpg" class="card__img">
+                        <div class="cards__text">
+                            <p class="card__list">METTODO UEPS:</p>
+                            <p class="card__copy">UEPS, que significa “Último en Entrar, Primero en Salir”, es un método contable para la gestión de inventarios. Con este sistema, los productos que ingresan al almacén más recientemente son los primeros en venderse o utilizarse, dejando los artículos antiguos en existencia. Este enfoque permite reflejar de manera diferente el costo de los productos vendidos y el valor del inventario, ayudando en la toma de decisiones financieras dentro de la empresa.</p>
+                            <a href="https://youtu.be/x9xvnTJDogY?si=Iw4H_5x00smC9KUk" class="card__button">VIDEO DE AYUDA</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="img/img3.jpg" class="card__img">
+                        <div class="cards__text">
+                            <p class="card__list">METODO: PROMEDIO PONDERADO</p>
+                            <p class="card__copy">El método de Promedio Ponderado es un sistema contable para la administración de inventarios. Con este método, el costo de los productos se calcula como un promedio de todos los artículos disponibles en el almacén, considerando tanto la cantidad como el precio de cada compra. Este enfoque permite reflejar de manera equilibrada el costo de los productos vendidos y el valor del inventario, facilitando decisiones financieras más consistentes dentro de la empresa.</p>
+                            <a href="https://youtu.be/9FNQysxgKM0?si=7-68bs0LMR59Piri" class="card__button">VIDEO DE AYUDA</a>
+                        </div>
+                    </div>
+                    
+                </article>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer style="background: linear-gradient(135deg, #4b6cb7, #182848); color: #fff; padding: 60px 0; font-family: 'Segoe UI', sans-serif;">
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 1200px; margin: auto; gap: 40px; text-align: center;">
+
+            <div style="flex: 1; min-width: 200px;">
+                <h4 style="font-size: 20px; margin-bottom: 15px; color: #ffdd59;">WhatsApp</h4>
+                <p style="font-size: 16px;">
+                    <a href="https://wa.me/50251848844" target="_blank" style="color: #fff; text-decoration: none; transition: 0.3s;">
+                        Mi número (Clic aquí)
+                    </a>
+                </p>
+            </div>
+
+            <div style="flex: 1; min-width: 200px;">
+                <h4 style="font-size: 20px; margin-bottom: 15px; color: #ffdd59;">Correo</h4>
+                <p style="font-size: 16px;">
+                    <a href="mailto:hcoronadof@miumg.edu.gt" style="color: #fff; text-decoration: none; transition: 0.3s;">
+                        hcoronadof@miumg.edu.gt (Clic aquí)
+                    </a>
+                </p>
+            </div>
+
+            <div style="flex: 1; min-width: 200px;">
+                <h4 style="font-size: 20px; margin-bottom: 15px; color: #ffdd59;">Ubicación</h4>
+                <p style="font-size: 16px;">
+                    <a href="https://www.google.com/maps?q=San+Pedro+Sac,+San+Marcos,+Guatemala" target="_blank" style="color: #fff; text-decoration: none; transition: 0.3s;">
+                        San Pedro Sac, San Marcos (Clic Aquí)
+                    </a>
+                </p>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>
